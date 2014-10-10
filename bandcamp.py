@@ -92,7 +92,12 @@ def GetDataFromProperty(p, s, bracket = False):
 # Print a JSON data.
 def PrintData(d):
 	print(json.dumps(d, sort_keys = True, indent = 2))
+
+def getTitleFilename(title):
+	allowed = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789-_()"
+	return ''.join(c for c in title if c in allowed)
 	
+
 #===============================================================================
 #
 #	MAIN CODE
@@ -136,7 +141,7 @@ def bcDL(url):
 #
 #===============================================================================
 	#Create dir for Album.
-	pathd = os.getcwd()+"\\"+artist+" - "+album["title"]+"\\"
+	pathd = os.getcwd()+"\\"+getTitleFilename(artist+" - "+album["title"])+"\\"
 	if not os.path.exists(pathd):
 		os.makedirs(pathd)
 	os.chdir(pathd)

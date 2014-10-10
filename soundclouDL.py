@@ -101,10 +101,12 @@ class SoundCloudDownload:
       for artist, title, title2, streamURL in zip(self.artistList, self.titleList, self.pureTitleList, self.streamURLlist):
          if not done:
             filename = "{0}.mp3".format(title)
+            
             sys.stdout.write("\nDownloading: {0}\n".format(filename))
             try:
                if not os.path.isfile(filename):
                   filename, headers = urllib.request.urlretrieve(url=streamURL, filename=filename, reporthook=self.report)
+                  self.addID3(title, title2, artist)
                   # reset download progress to report multiple track download progress correctly
                   self.download_progress = 0
                elif self.likes:
