@@ -4,7 +4,11 @@ UnlimitedGrooveWorks
 Download songs from Bandcamp or Soundcloud.
 
 Big merge of https://github.com/Difegue/Soundcloud-Downloader and https://github.com/Difegue/bandcamp-downloader .  
-Input an URL, download either from soundcloud or bandcamp-based websites!
+Input an URL, download either from soundcloud or bandcamp-based websites! 
+ 
+Usage
+------------
+python ugw.py [URL]
 
 Requirements
 ------------
